@@ -22,11 +22,11 @@ class PostgreSQLConnection:
         else:
             # Default configuration from environment variables
             self.config = {
-                'host': os.getenv('POSTGRES_HOST', 'localhost'),
-                'port': int(os.getenv('POSTGRES_PORT', '5432')),
-                'database': os.getenv('POSTGRES_DB', 'etsy'),
-                'user': os.getenv('POSTGRES_USER', 'etsy'),
-                'password': os.getenv('POSTGRES_PASSWORD', 'etsy')
+                'host': os.getenv('POSTGRES_HOST', 'aws-1-ap-southeast-1.pooler.supabase.com'),
+                'port': int(os.getenv('POSTGRES_PORT', '6543')),
+                'database': os.getenv('POSTGRES_DB', 'postgres'),
+                'user': os.getenv('POSTGRES_USER', 'postgres.ltnxbmqzguhwwilvxfaj'),
+                'password': os.getenv('POSTGRES_PASSWORD', 'mAdJUW85WcoYJiCc')
             }
         
         self.connection = None
