@@ -38,10 +38,7 @@ def get_total_revenue(start_date: str = None, end_date: str = None, customer_typ
             SELECT customer_key FROM fact_sales GROUP BY customer_key HAVING COUNT(DISTINCT order_key) > 1
         )"""
     
-    result = execute_query(sql, tuple(params) if params else None)
-    if result.empty:
-        return 0.0
-    return float(result.iloc[0, 0])
+    return execute_query(sql, tuple(params) if params else None)
 
 def render_get_total_revenue_description(start_date_str, end_date_str, customer_type):
     """Render description for total revenue KPI"""
